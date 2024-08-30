@@ -4,6 +4,20 @@ import { FakeStoreApi } from '../../services/fake-store-api';
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/cart";
 
+/**
+ * Component that renders a single product from the Fake Store API.
+ *
+ * It fetches a single product from the Fake Store API using the useEffect hook
+ * and sets the 'product' state with the response. It also sets the 'loading'
+ * state to false when the data is fetched.
+ *
+ * The component renders a card with the product image, title, description, price
+ * and a button to add the product to the cart. If the data is still being fetched,
+ * it renders a loader instead. If the product is not found, it renders a message
+ * to visit the home page.
+ *
+ * @returns {JSX.Element} The component
+ */
 const Product = () => {
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState(null);
@@ -11,7 +25,15 @@ const Product = () => {
     const { addToCart } = useCart();
 
     useEffect(() => {
+        /**
+         * Fetches a single product from the Fake Store API, sets the 'product' state with the response
+         * and sets the 'loading' state to false.
+         *
+         * @returns {Promise<void>}
+         */
         const fetchProduct = async () => {
+            console.log(productId);
+            
             setLoading(true);
             try {
                 const product = await FakeStoreApi.fetchProductById(productId);
@@ -44,7 +66,7 @@ const Product = () => {
     // Function to convert price to rupees
     const convertToRupees = (price) => {
         const conversionRate = 60; 
-        // Example conversion rate: 1 USD = 83 INR
+        // Example conversion rate: 1 USD = 60 INR
         return (price * conversionRate).toFixed(2);
     };
 
@@ -64,7 +86,7 @@ const Product = () => {
                                 <p className="my-2">{product.description}</p>
                             </div>
                             <div className="flex">
-                                <span className="price">₹{convertToRupees(product.price)}</span>
+                                <span className="price">&#8377;{convertToRupees(product.price)}</span>
                                 <span className="cart" onClick={() => addToCart(product)}>
                                     <img src="/cart.svg" alt="Add to Cart" />
                                 </span>

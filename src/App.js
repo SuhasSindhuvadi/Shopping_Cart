@@ -8,9 +8,15 @@ import  NotFound  from "./pages/not-found/not-found"
 
 import { useCart } from './context/cart'
 
+/**
+ * App component renders the navigation bar and all the routes
+ * available in the application
+ * 
+ * @returns {JSX.Element}
+ */
 function App() {
 
-  const { cartItemCount } = useCart()
+  const { cartItemCount } = useCart() //custom hook for cart item count
   
   return (
     <>

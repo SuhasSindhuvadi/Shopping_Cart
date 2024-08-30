@@ -3,7 +3,15 @@ import { useCart } from "../../context/cart";
 import "./cart.css";
 
 const SHIPPING_CHARGES = 98.63;
-
+/**
+ * Renders the cart page, which shows the items in the cart, their price, and total amount to pay.
+ *
+ * The component also provides a button to increase or decrease the quantity of each item in the cart.
+ *
+ * If the cart is empty, it renders a message saying "Cart is empty."
+ *
+ * @returns {JSX.Element} The cart page
+ */
 const Cart = () => {
     const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
@@ -20,8 +28,8 @@ const Cart = () => {
         return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
     };
 
-    // Assuming a fixed conversion rate, for example: 1 USD = 83 INR
-    const conversionRate = 83;
+    // Assuming a fixed conversion rate, for example: 1 USD = 60 INR
+    const conversionRate =60;
     
     // Function to convert price from USD to INR
     const convertToRupees = (price) => {
@@ -56,7 +64,7 @@ const Cart = () => {
                                                     {item.product.title}
                                                 </Link>
                                             </div>
-                                            <span className="price">₹{convertToRupees(round(item.product.price,2))}</span>
+                                            <span className="price">&#8377;{convertToRupees(round(item.product.price,2))}</span>
                                         </div>
                                         <div className="itemControl flex">
                                             <div>
@@ -91,15 +99,15 @@ const Cart = () => {
                             <div className="summary py-3 my-2">
                                 <div className="flex py-1">
                                     <span>Subtotal:</span>
-                                    <span className="price">₹{totalCartPriceInRupees}</span>
+                                    <span className="price">&#8377;{totalCartPriceInRupees}</span>
                                 </div>
                                 <div className="flex py-1">
                                     <span>Shipping Fee:</span>
-                                    <span className="price">₹{shippingCharges}</span>
+                                    <span className="price">&#8377;{shippingCharges}</span>
                                 </div>
                                 <div className="flex py-1">
                                     <span>Total:</span>
-                                    <span className="price">₹{totalInRupees}</span>
+                                    <span className="price">&#8377;{totalInRupees}</span>
                                 </div>
                             </div>
                         </div>

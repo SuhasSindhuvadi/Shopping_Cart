@@ -1,13 +1,14 @@
+import axios from "axios";
 const FakeStoreApi = {
     fetchAllProducts: async () => {
-        const res = await fetch('https://fakestoreapi.com/products');
-        const result = res.json();
-        return result;
+        const result = await axios.get('https://fakestoreapi.com/products');
+        // console.log(result);
+        
+        return result.data;
     },
     fetchProductById: async (productId) => {
-        const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
-        const result = await res.json()
-        return result
+        const result = await axios.get(`https://fakestoreapi.com/products/${productId}`)
+        return result.data;
     }
 }
 
