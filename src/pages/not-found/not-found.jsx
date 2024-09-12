@@ -4,9 +4,9 @@ const NotFound = () => {
     return (
         <div className="container">
             <div className="product py-2">
-                <div className="details p-3">
-                    Page not found. Go to{" "}
-                    <Link to="/" replace>
+                <div className="details p-3">z
+                    Page not found. Go to{"  "}
+                    <Link to="/">
                         homepage
                     </Link>
                     .

@@ -11,10 +11,6 @@
 .cartItem {
     background-color: #fff;
     border-radius: 10px;
-    /* -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px; */
 }
 .addQty {
     background-color: #4CAF50; /* Green */
@@ -69,15 +65,6 @@
     grid-template-columns: 1fr 2fr 1fr;
 }
 
-/* .itemDetails {
-	padding: 30px;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-} */
-
 .itemImage {
     height: 100px;
     width: 100px;
@@ -92,10 +79,6 @@
     background-color: var(--blue);
     color: #fff;
     border-radius: 5px;
-    /* -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px; */
     padding: 5px 0;
     cursor: pointer;
 }
@@ -116,19 +99,11 @@
     width: 40px;
     border: solid 1px #f2f2f3;
     border-radius: 5px;
-    /* -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px; */
     cursor: pointer;
     background-color: transparent;
     overflow: hidden;
     font-size: 1.5rem;
     transition: all 0.3s;
-    /* -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s; */
 }
 
 .addQty:hover,
@@ -150,10 +125,6 @@
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 10px;
-    /* -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px; */
     text-align: center;
 }
 
@@ -182,37 +153,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%); */
     background-color: #fff;
     padding: 30px 50px;
     font-weight: 900;
     font-size: 1.5rem;
     color: var(--blue);
     box-shadow: rgb(229, 229, 230) 0px 15px 15px -5px;
-}
-
-@media (max-width: 970px) {
-    .cartWrapper .grid {
-        position: relative;
-        grid-template-columns: 1fr;
-    }
-
-    .item .grid {
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-}
-
-@media (max-width: 675px) {
-    .item .grid {
-        grid-template-columns: 1fr 2fr;
-    }
-}
-
-@media (max-width: 536px) {
-    .item .grid {
-        grid-template-columns: 1fr;
-    }
 }
